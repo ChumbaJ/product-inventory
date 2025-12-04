@@ -20,6 +20,10 @@ export class Product {
   @Check("quantity >= 0")
   quantity: number;
 
-  @Column({ type: "timestamp", default: () => "CURRENT_TIMESTAMP" })
+  @Column({
+    type: "timestamp",
+    default: () => "CURRENT_TIMESTAMP",
+    name: "createdat",
+  })
   createdAt: Date;
 }
