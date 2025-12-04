@@ -1,7 +1,6 @@
+import path from "path";
 import { DataSource } from "typeorm";
 import { config } from "./config";
-import { AddMockDataToProduct1624866202511 } from "./migrations/1764770976317-AddMockData";
-import { CreateProductTable1764860185525 } from "./migrations/1764860185525-CreateProductTable";
 import { Product } from "./modules/product/product.entity";
 
 export const AppDataSource = new DataSource({
@@ -14,11 +13,7 @@ export const AppDataSource = new DataSource({
   logging: config.db.logging,
   entities: [Product],
   synchronize: false,
-  migrations: [
-    CreateProductTable1764860185525,
-    AddMockDataToProduct1624866202511,
-  ],
-  migrationsRun: true,
+  migrations: [path.join(__dirname, "../dist/migrations/*.js")],
 });
 
 export async function initDB() {
