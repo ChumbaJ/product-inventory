@@ -1,7 +1,8 @@
 import { DataSource } from "typeorm";
 import { config } from "./config";
-import { Product } from "./modules/product/product.entity";
 import { AddMockDataToProduct1624866202511 } from "./migrations/1764770976317-AddMockData";
+import { CreateProductTable1764860185525 } from "./migrations/1764860185525-CreateProductTable";
+import { Product } from "./modules/product/product.entity";
 
 export const AppDataSource = new DataSource({
   type: "postgres",
@@ -13,7 +14,10 @@ export const AppDataSource = new DataSource({
   logging: config.db.logging,
   entities: [Product],
   synchronize: false,
-  migrations: [AddMockDataToProduct1624866202511],
+  migrations: [
+    CreateProductTable1764860185525,
+    AddMockDataToProduct1624866202511,
+  ],
   migrationsRun: true,
 });
 
