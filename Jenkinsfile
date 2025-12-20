@@ -1,6 +1,8 @@
 @Library('my-lib') _
 
 pipeline {
+    agent any
+
     stages {
         stage("versioning") {
             steps {
