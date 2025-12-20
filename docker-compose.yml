@@ -14,7 +14,7 @@ services:
       - app-network
 
   backend:
-    build: ./backend
+    image: chumbaj13/backend_app:${BACKEND_TAG}
     ports:
       - "5000:5000"
     depends_on:
@@ -23,10 +23,7 @@ services:
       - app-network
 
   frontend:
-    build:
-      context: ./frontend
-      args:
-        - BUILD_API_URL=http://3.127.40.112:5000
+    image: chumbaj13/frontend_app:${FRONTEND_TAG}
     ports:
       - "81:80"
     depends_on:
