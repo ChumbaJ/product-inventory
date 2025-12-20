@@ -56,7 +56,7 @@ export const MainPage = () => {
     <div className="flex flex-col gap-3">
       <div className="relative flex items-center justify-center mb-4">
         <h1 className="text-3xl font-bold text-center text-gray-900">
-          Список Продуктов
+          Список Продуктов MY APP
         </h1>
         <Button
           onClick={handleCreateProduct}
