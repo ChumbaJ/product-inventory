@@ -14,6 +14,7 @@ pipeline {
             steps {
                 script {
                     buildApp()
+                    
                 }
             }
         }
