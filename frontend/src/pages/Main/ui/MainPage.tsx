@@ -58,7 +58,6 @@ export const MainPage = () => {
         <h1 className="text-3xl font-bold text-center text-gray-900">
           Список Продуктов
         </h1>
-
         <Button
           onClick={handleCreateProduct}
           className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"

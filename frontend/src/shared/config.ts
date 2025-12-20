@@ -1,4 +1,4 @@
 export const config = {
-  backendAddr: "http://localhost:5000",
+  backendAddr: import.meta.env.VITE_BASE_API_URL,
   limit: 50,
 };

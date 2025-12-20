@@ -23,7 +23,10 @@ services:
       - app-network
 
   frontend:
-    build: ./frontend
+    build:
+      context: ./frontend
+      args:
+        - BUILD_API_URL=http://3.127.40.112:5000
     ports:
       - "80:80"
     depends_on:

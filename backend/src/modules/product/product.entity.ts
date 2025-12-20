@@ -13,7 +13,7 @@ export class Product {
   name: string;
 
   @Column({ type: "decimal" })
-  @Check("price >= 0")
+  @Check("price > 0")
   price: number;
 
   @Column({ type: "int" })
