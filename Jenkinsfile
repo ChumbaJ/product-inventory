@@ -37,8 +37,8 @@ pipeline {
 
                     sshagent(['ec2-server']) {
                         // set and copy .env onto EC2
-                        sh "echo 'BACKEND_TAG=${env.BACKEND_TAG}' > .env"
-                        sh "echo 'FRONTEND_TAG=${env.FRONTEND_TAG}' >> .env"
+                        sh "echo 'BACKEND_TAG=${env.DEV_TAG_BACKEND}' > .env"
+                        sh "echo 'FRONTEND_TAG=${env.DEV_TAG_FRONTEND}' >> .env"
                         sh "scp .env ec2-user@3.127.40.112:/home/ec2-user"
 
                         // copy docker-compose onto EC2
